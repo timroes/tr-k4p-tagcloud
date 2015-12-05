@@ -27,7 +27,7 @@ function TagcloudProvider(Private) {
 					title: 'Tags',
 					min: 1,
 					max: 1,
-					aggFilter: ['!geohash_grid', '!terms', 'filters']
+					aggFilter: '!geohash_grid'
 				}
 			])
 	});
