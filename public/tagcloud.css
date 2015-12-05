@@ -1,0 +1,13 @@
+.tagcloud {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.tagcloud .tag {
+	margin-right: 0.5em;
+	white-space: nowrap;
+	display: inline-block;
+	color: #555;
+}

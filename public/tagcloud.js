@@ -1,3 +1,7 @@
+// Include the angular controller
+require('plugins/tr-k4p-tagcloud/tagcloudController');
+require('plugins/tr-k4p-tagcloud/tagcloud.css');
+
 // The provider function, which must return our new visualization type
 function TagcloudProvider(Private) {
 	var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));

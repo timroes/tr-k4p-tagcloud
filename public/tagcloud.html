@@ -1,1 +1,3 @@
-<h1>Tagcloud Template</h1>
+<div ng-controller="TagcloudController" class="tagcloud">
+	<span class="tag" ng-repeat="tag in tags">{{tag.label}}</span>
+</div>
