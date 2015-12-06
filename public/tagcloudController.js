@@ -5,7 +5,23 @@ var module = require('ui/modules').get('tr-k4p-tagcloud');
 var maxFontSize = 32,
 	minFontSize = 12;
 
-module.controller('TagcloudController', function($scope) {
+module.controller('TagcloudController', function($scope, Private) {
+
+	var filterManager = Private(require('ui/filter_manager'));
+
+	$scope.filter = function(tag) {
+		// Add a new filter via the filter manager
+		filterManager.add(
+			// The field to filter for, we can get it from the config
+			$scope.vis.aggs.bySchemaName['tags'][0].params.field,
+			// The value to filter for, we will read out the bucket key from the tag
+			tag.label,
+			// Whether the filter is negated. If you want to create a negated filter pass '-' here
+			null,
+			// The index pattern for the filter
+			$scope.vis.indexPattern.title
+		);
+	};
 
 	$scope.$watch('esResponse', function(resp) {
 		if (!resp) {
