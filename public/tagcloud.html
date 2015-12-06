@@ -1,3 +1,3 @@
 <div ng-controller="TagcloudController" class="tagcloud">
-	<span class="tag" ng-repeat="tag in tags">{{tag.label}}</span>
+	<span class="tag" ng-repeat="tag in tags" ng-style="{'font-size': tag.fontSize + 'px'}">{{tag.label}}</span>
 </div>
